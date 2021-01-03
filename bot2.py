@@ -288,7 +288,6 @@ async def on_command_error( ctx, error ):
     pass
 
 # Get token
-token = open( "token2.txt", "r").readline()
+#token = open( "token.txt", "r").readline()
 
-
-client.run( token )
+client.run(os.getenv('BOT_TOKEN'))
