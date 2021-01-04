@@ -53,8 +53,10 @@ async def on_ready():
 #Autorole
 @client.event
 async def on_member_join(member):
-    role = disocrd.utils.get(member.guild.roles, id =795314312281063425)
-    await member.add_roles(role)
+    for guild in client.guild:
+        for member in guild.members:
+            role = disocrd.utils.get(member.guild.roles, id =795314312281063425)
+            await member.add_roles(role)
 
 #NSFW
 def is_nsfw():
